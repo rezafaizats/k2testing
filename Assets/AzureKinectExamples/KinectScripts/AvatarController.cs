@@ -78,15 +78,15 @@ namespace com.rfilkov.components
 
 
         [Tooltip("Horizontal offset of the avatar with respect to the position of user's spine-base.")]
-        [Range(-0.5f, 0.5f)]
+        [Range(-20f, 20f)]
         public float horizontalOffset = 0f;
 
         [Tooltip("Vertical offset of the avatar with respect to the position of user's spine-base.")]
-        [Range(-0.5f, 0.5f)]
+        [Range(-20f, 20f)]
         public float verticalOffset = 0f;
 
         [Tooltip("Forward offset of the avatar with respect to the position of user's spine-base.")]
-        [Range(-0.5f, 0.5f)]
+        [Range(-20f, 20f)]
         public float forwardOffset = 0f;
 
         // suggested and implemented by Ruben Gonzalez

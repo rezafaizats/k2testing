@@ -21,12 +21,12 @@ namespace com.rfilkov.components
         public float minUserDistance = 1.0f;
 
         [Tooltip("Body scale factor (incl. arms and legs) that may be used for fine tuning of model-scale.")]
-        [Range(0.0f, 2.0f)]
+        [Range(-5.0f, 5.0f)]
         public float bodyScaleFactor = 1f;
 
         [Tooltip("Body width scale factor that may be used for fine tuning of model-width scale.")]
-        [Range(0.0f, 2.0f)]
-        internal float bodyWidthFactor = 0f;
+        [Range(-5.0f, 5.0f)]
+        public float bodyWidthFactor = 0f;
 
         [Tooltip("Additional scale factor for arms that may be used for fine tuning of model arm-scale.")]
         [Range(0.0f, 2.0f)]
