@@ -1,43 +1,82 @@
 using System.Collections;
 using System.Collections.Generic;
+using com.rfilkov.components;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class VirtualCursor : MonoBehaviour
+public class VirtualCursor : MonoBehaviour, InteractionListenerInterface
 {
     //UI Raycast
     [SerializeField] GraphicRaycaster m_Raycaster;
     PointerEventData m_PointerEventData;
     [SerializeField] EventSystem m_EventSystem;
+    public InteractionManager interactionManager;
+    public float interactionCooldown = 1f;
+
+    private float currentInteractionCooldown = 0f;
+    private Vector3 screenNormalPos = Vector3.zero;
+	private InteractionManager.HandEventType lastHandEvent = InteractionManager.HandEventType.None;
+
+
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        //Set up the new Pointer Event
-        m_PointerEventData = new PointerEventData(m_EventSystem);
-        //Set the Pointer Event Position to that of the game object
-        m_PointerEventData.position = this.transform.localPosition;
-
-        //Create a list of Raycast Results
-        List<RaycastResult> results = new List<RaycastResult>();
-        // EventSystem.current.RaycastAll(m_PointerEventData, results);
-
-        //Raycast using the Graphics Raycaster and mouse click position
-        m_Raycaster.Raycast(m_PointerEventData, results);
-
-        if (results.Count > 0)
-        {
-            Debug.Log("Hit " + results[0].gameObject.name);
-            if (results[0].gameObject.TryGetComponent<ButtonInteraction>(out var button)) button.Interact();
-        }
-
         Vector2 inputAxis = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
         transform.Translate(inputAxis);
+
+        PointerEventData eventData = new PointerEventData(EventSystem.current);
+        eventData.position = this.transform.position;
+
+        // Perform the raycast
+        List<RaycastResult> results = new List<RaycastResult>();
+        EventSystem.current.RaycastAll(eventData, results);
+        if (results.Count > 0 && currentInteractionCooldown <= 0f)
+        {
+            Debug.Log($"{results[0]}");
+            if (results[0].gameObject.TryGetComponent<ButtonInteraction>(out var vButton))
+            {
+                Debug.Log("Button interact!");
+                vButton.Interact();
+                currentInteractionCooldown = interactionCooldown;
+            }
+        }
+
+        if (currentInteractionCooldown > 0f) currentInteractionCooldown -= Time.deltaTime; 
+    }
+    
+    public void HandGripDetected(ulong userId, int userIndex, bool isRightHand, bool isHandInteracting, Vector3 handScreenPos)
+    {
+		if (!isHandInteracting || !interactionManager)
+			return;
+		if (userId != interactionManager.GetUserID())
+			return;
+
+		lastHandEvent = InteractionManager.HandEventType.Grip;
+		//isLeftHandDrag = !isRightHand;
+		screenNormalPos = handScreenPos;
+    }
+
+    public void HandReleaseDetected(ulong userId, int userIndex, bool isRightHand, bool isHandInteracting, Vector3 handScreenPos)
+    {
+		if (!isHandInteracting || !interactionManager)
+			return;
+		if (userId != interactionManager.GetUserID())
+			return;
+
+		lastHandEvent = InteractionManager.HandEventType.Release;
+		//isLeftHandDrag = !isRightHand;
+		screenNormalPos = handScreenPos;
+    }
+
+    public bool HandClickDetected(ulong userId, int userIndex, bool isRightHand, Vector3 handScreenPos)
+    {
+        return true;
     }
 }
