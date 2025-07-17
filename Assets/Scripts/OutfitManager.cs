@@ -28,8 +28,8 @@ public class OutfitManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0)) NextOutfit();
-        if (Input.GetMouseButtonDown(1)) PreviousOutfit();
+        // if (Input.GetMouseButtonDown(0)) NextOutfit();
+        // if (Input.GetMouseButtonDown(1)) PreviousOutfit();
     }
     
     public void NextOutfit()
