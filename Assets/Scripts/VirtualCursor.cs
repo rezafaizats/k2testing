@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class VirtualCursor : MonoBehaviour
 {
     //UI Raycast
-    [SerializeField]  GraphicRaycaster m_Raycaster;
+    [SerializeField] GraphicRaycaster m_Raycaster;
     PointerEventData m_PointerEventData;
     [SerializeField] EventSystem m_EventSystem;
     // Start is called before the first frame update
@@ -18,7 +18,7 @@ public class VirtualCursor : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {    
+    {
         //Set up the new Pointer Event
         m_PointerEventData = new PointerEventData(m_EventSystem);
         //Set the Pointer Event Position to that of the game object
@@ -26,6 +26,7 @@ public class VirtualCursor : MonoBehaviour
 
         //Create a list of Raycast Results
         List<RaycastResult> results = new List<RaycastResult>();
+        // EventSystem.current.RaycastAll(m_PointerEventData, results);
 
         //Raycast using the Graphics Raycaster and mouse click position
         m_Raycaster.Raycast(m_PointerEventData, results);
@@ -33,7 +34,10 @@ public class VirtualCursor : MonoBehaviour
         if (results.Count > 0)
         {
             Debug.Log("Hit " + results[0].gameObject.name);
-            if (results[0].gameObject.TryGetComponent<ButtonInteraction>(out var button)) button.Interact();            
+            if (results[0].gameObject.TryGetComponent<ButtonInteraction>(out var button)) button.Interact();
         }
+
+        Vector2 inputAxis = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+        transform.Translate(inputAxis);
     }
 }

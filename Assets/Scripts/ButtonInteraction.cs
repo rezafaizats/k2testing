@@ -6,7 +6,7 @@ using UnityEngine.Events;
 public class ButtonInteraction : MonoBehaviour
 {
     public UnityEvent OnButtonVirtualClick;
-    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +22,7 @@ public class ButtonInteraction : MonoBehaviour
     public void Interact()
     {
         Debug.Log($"{gameObject.name} is invoked");
+        OnButtonVirtualClick?.Invoke();
     }
 
 }
