@@ -143,7 +143,7 @@ ModelImporter:
         value: {x: 0, y: 0, z: 0}
         length: 0
         modified: 0
-    - boneName: S_Clavicle_Left
+    - boneName: S_Shoulder_Left
       humanName: LeftUpperArm
       limit:
         min: {x: 0, y: 0, z: 0}
@@ -151,7 +151,7 @@ ModelImporter:
         value: {x: 0, y: 0, z: 0}
         length: 0
         modified: 0
-    - boneName: S_Shoulder_Left
+    - boneName: S_Elbow_Left
       humanName: LeftLowerArm
       limit:
         min: {x: 0, y: 0, z: 0}
@@ -159,7 +159,7 @@ ModelImporter:
         value: {x: 0, y: 0, z: 0}
         length: 0
         modified: 0
-    - boneName: S_Elbow_Left
+    - boneName: S_Wrist_Left
       humanName: LeftHand
       limit:
         min: {x: 0, y: 0, z: 0}
@@ -167,7 +167,7 @@ ModelImporter:
         value: {x: 0, y: 0, z: 0}
         length: 0
         modified: 0
-    - boneName: S_Clavicle_Right
+    - boneName: S_Shoulder_Right
       humanName: RightUpperArm
       limit:
         min: {x: 0, y: 0, z: 0}
@@ -175,7 +175,7 @@ ModelImporter:
         value: {x: 0, y: 0, z: 0}
         length: 0
         modified: 0
-    - boneName: S_Shoulder_Right
+    - boneName: S_Elbow_Right
       humanName: RightLowerArm
       limit:
         min: {x: 0, y: 0, z: 0}
@@ -183,7 +183,7 @@ ModelImporter:
         value: {x: 0, y: 0, z: 0}
         length: 0
         modified: 0
-    - boneName: S_Elbow_Right
+    - boneName: S_Wrist_Right
       humanName: RightHand
       limit:
         min: {x: 0, y: 0, z: 0}
