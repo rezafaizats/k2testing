@@ -7,16 +7,11 @@ using UnityEngine.UI;
 
 public class VirtualCursor : MonoBehaviour, InteractionListenerInterface
 {
-    //UI Raycast
-    [SerializeField] GraphicRaycaster m_Raycaster;
-    PointerEventData m_PointerEventData;
-    [SerializeField] EventSystem m_EventSystem;
     public InteractionManager interactionManager;
     public float interactionCooldown = 1f;
 
     private float currentInteractionCooldown = 0f;
     private Vector3 screenNormalPos = Vector3.zero;
-	private InteractionManager.HandEventType lastHandEvent = InteractionManager.HandEventType.None;
 
 
     // Start is called before the first frame update
@@ -58,7 +53,6 @@ public class VirtualCursor : MonoBehaviour, InteractionListenerInterface
 		if (userId != interactionManager.GetUserID())
 			return;
 
-		lastHandEvent = InteractionManager.HandEventType.Grip;
 		//isLeftHandDrag = !isRightHand;
 		screenNormalPos = handScreenPos;
     }
@@ -70,7 +64,6 @@ public class VirtualCursor : MonoBehaviour, InteractionListenerInterface
 		if (userId != interactionManager.GetUserID())
 			return;
 
-		lastHandEvent = InteractionManager.HandEventType.Release;
 		//isLeftHandDrag = !isRightHand;
 		screenNormalPos = handScreenPos;
     }
