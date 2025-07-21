@@ -3387,27 +3387,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3187c833c6106e54facb6071b57475a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deviceStreamingMode: 0
-  deviceIndex: 0
-  recordingFile: 
-  minDepthDistance: 0.5
-  maxDepthDistance: 10
-  pointCloudResolution: 0
-  pointCloudVertexTexture: {fileID: 0}
-  pointCloudColorTexture: {fileID: 0}
-  pointCloudPlayerList: 
-  frameSourceFlags: 0
-  isSyncDepthAndColor: 0
-  isSyncBodyAndDepth: 0
-  initialPosePosition: {x: 0, y: 0, z: 0}
-  initialPoseRotation: {x: 0, y: 0, z: 0, w: 1}
-  sensorRotOffset: {x: 0, y: 0, z: 0}
-  sensorRotFlipZ: 0
-  sensorRotIgnoreY: 0
-  sensorRotValueY: 0
-  bIgnoreZCoordinates: 0
-  bIgnoreInferredJoints: 0
-  usersFaceBackwards: 0
 --- !u!1001 &902345124
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4848,9 +4827,9 @@ MonoBehaviour:
   leftHandInteraction: 1
   rightHandInteraction: 0
   guiHandCursor: {fileID: 1115972658}
-  gripHandTexture: {fileID: 21300000, guid: 475d892be250472448901e2ac7e4f3da, type: 3}
-  releaseHandTexture: {fileID: 21300000, guid: deab68507f779a144b807ddc9587f2fe, type: 3}
-  normalHandTexture: {fileID: 21300000, guid: 55b9da46e4eef3f4cafab36e66796aeb, type: 3}
+  gripHandTexture: {fileID: 21300000, guid: 5a38c7fc14dbc964eb8d4445cb8e4692, type: 3}
+  releaseHandTexture: {fileID: 21300000, guid: 5a38c7fc14dbc964eb8d4445cb8e4692, type: 3}
+  normalHandTexture: {fileID: 21300000, guid: 5a38c7fc14dbc964eb8d4445cb8e4692, type: 3}
   handOverlayCursor: 1
   sensorIndex: 0
   smoothFactor: 10
@@ -4891,9 +4870,9 @@ MonoBehaviour:
   leftHandInteraction: 0
   rightHandInteraction: 1
   guiHandCursor: {fileID: 600154787}
-  gripHandTexture: {fileID: 21300000, guid: 475d892be250472448901e2ac7e4f3da, type: 3}
-  releaseHandTexture: {fileID: 21300000, guid: deab68507f779a144b807ddc9587f2fe, type: 3}
-  normalHandTexture: {fileID: 21300000, guid: 55b9da46e4eef3f4cafab36e66796aeb, type: 3}
+  gripHandTexture: {fileID: 21300000, guid: 55eaf068e795c9c45a7e0be244a7051c, type: 3}
+  releaseHandTexture: {fileID: 21300000, guid: 55eaf068e795c9c45a7e0be244a7051c, type: 3}
+  normalHandTexture: {fileID: 21300000, guid: 55eaf068e795c9c45a7e0be244a7051c, type: 3}
   handOverlayCursor: 1
   sensorIndex: 0
   smoothFactor: 10
