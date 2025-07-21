@@ -873,6 +873,9 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 0e46c0dffeb3d4607aef4aaebc792d58, type: 3}
       insertIndex: -1
+      addedObject: {fileID: 204673499}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 0e46c0dffeb3d4607aef4aaebc792d58, type: 3}
+      insertIndex: -1
       addedObject: {fileID: 204673496}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 0e46c0dffeb3d4607aef4aaebc792d58, type: 3}
       insertIndex: -1
@@ -941,6 +944,27 @@ MonoBehaviour:
   forwardOffset: 0
   useUnscaledTime: 0
   boneColliderRadius: 0
+--- !u!95 &204673499
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 204673494}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: e8b81ece1f98a4a6782f49c721a513b2, type: 3}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &231290232
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3176,13 +3200,13 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-  onScreenshotTimer:
+  onScreenshotTimerUpdate:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 978634819}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
         m_MethodName: DisplayTimer
-        m_Mode: 5
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -3191,7 +3215,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  onScreenshotDone:
+  onScreenshotTimerDone:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 978634819}
@@ -3206,6 +3230,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  onScreenshotDone:
+    m_PersistentCalls:
+      m_Calls:
       - m_Target: {fileID: 978634818}
         m_TargetAssemblyTypeName: UIElementsUtils, Assembly-CSharp
         m_MethodName: ActivateCanvasGroup
@@ -3216,7 +3243,7 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 1
+          m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 978634818}
         m_TargetAssemblyTypeName: UIElementsUtils, Assembly-CSharp
@@ -3262,7 +3289,19 @@ MonoBehaviour:
         m_CallState: 2
   onUploadFailed:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 609268930}
+        m_TargetAssemblyTypeName: UnityEngine.CanvasGroup, UnityEngine
+        m_MethodName: set_interactable
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!1 &710697895
 GameObject:
   m_ObjectHideFlags: 0
@@ -4402,6 +4441,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95b897db3e3f0984e91585a3acb42e50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  outfitNameText: {fileID: 2125496117}
   countdownText: {fileID: 2083912968}
   uploadErrorText: {fileID: 272820717}
 --- !u!1 &1018170093
@@ -5239,6 +5279,27 @@ MonoBehaviour:
   forwardOffset: 0
   useUnscaledTime: 0
   boneColliderRadius: 0
+--- !u!95 &1142783522
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1142783515}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: e8b81ece1f98a4a6782f49c721a513b2, type: 3}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1272239339
 GameObject:
   m_ObjectHideFlags: 0
@@ -7043,21 +7104,41 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   outfits:
-  - meshOutfit:
+  - outfitName: Kebaya Kartini Bordir Halus Bunga dengan Wastra Tapis Lampung
+    meshOutfit:
     - {fileID: 1142783515}
     - {fileID: 204673494}
-  - meshOutfit:
+  - outfitName: 'Kebaya Encim Bordir Halus dengan Wastra Batik Betawi '
+    meshOutfit:
     - {fileID: 1293146979}
     - {fileID: 356697415}
-  - meshOutfit:
+  - outfitName: 'Kebaya Panjang Beludru dengan Wastra Batik Solo '
+    meshOutfit:
     - {fileID: 810481007}
     - {fileID: 485117085}
-  - meshOutfit:
+  - outfitName: 'Kebaya Kutu Baru dan Selendang Sifon dengan Wastra Tapis Lampung '
+    meshOutfit:
     - {fileID: 1672447782}
     - {fileID: 72379811}
-  - meshOutfit:
+  - outfitName: Kebaya Kutu Baru dan Selendang dengan Wastra Tapis Lampung
+    meshOutfit:
     - {fileID: 231290233}
     - {fileID: 73635876}
+  onOutfitChanged:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 978634819}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: ChangeOutfitName
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &1634841810
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7276,6 +7357,9 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 0e46c0dffeb3d4607aef4aaebc792d58, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1142783522}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 0e46c0dffeb3d4607aef4aaebc792d58, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1142783519}
@@ -8764,7 +8848,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 415, y: 120}
+  m_SizeDelta: {x: 375, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2125496117
 MonoBehaviour:
@@ -8813,8 +8897,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 18
+  m_fontSizeBase: 18
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

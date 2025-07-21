@@ -12,7 +12,8 @@ public class ScreenshotManager : MonoBehaviour
     [SerializeField] private float screenshotTimer = 3f;
 
     [SerializeField] private UnityEvent onScreenshotStart;
-    [SerializeField] private UnityEvent<string> onScreenshotTimer;
+    [SerializeField] private UnityEvent<string> onScreenshotTimerUpdate;
+    [SerializeField] private UnityEvent onScreenshotTimerDone;
     [SerializeField] private UnityEvent onScreenshotDone;
 
 
@@ -34,11 +35,11 @@ public class ScreenshotManager : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         if (!isScreenshotStarted) return;
-        screenshotTimer -= Time.deltaTime;
-        onScreenshotTimer?.Invoke(screenshotTimer.ToString("F0"));
+        currentScreenshotTimer -= Time.deltaTime;
+        onScreenshotTimerUpdate?.Invoke(currentScreenshotTimer.ToString("F0"));
     }
 
     public void StartScreenshot()
@@ -49,11 +50,15 @@ public class ScreenshotManager : MonoBehaviour
 
     private IEnumerator DelayScreenshot()
     {
+        Debug.Log(currentScreenshotTimer);
         isScreenshotStarted = true;
 
         yield return new WaitForSeconds(screenshotTimer);
 
         isScreenshotStarted = false;
+
+        currentScreenshotTimer = screenshotTimer;
+        onScreenshotTimerDone?.Invoke();
 
         var filePath = Directory.GetCurrentDirectory();
         fileScreenshotName = "ScreenCapture_" + System.DateTime.UtcNow.ToString("ydd-MM-yyyy-HH-mm-ss") + ".png";
@@ -94,12 +99,12 @@ public class ScreenshotManager : MonoBehaviour
 
     private void OnUploadSuccess(PhotoHostingResponse response)
     {
-        Debug.Log($"Success callback {response.link}");
+        Debug.Log($"Success callback {response.data.url}");
 
         var successText = "Foto berhasil diunggah!";
         isUploading = false;
         Vector2Int qrResultSize = new Vector2Int(256, 256);
-        var qrResultTexture = Screenshotutils.EncodeToQR(response.link, qrResultSize.x, qrResultSize.y, (error) => Debug.LogError($"Encoding failed! {error}"));
+        var qrResultTexture = Screenshotutils.EncodeToQR(response.data.url, qrResultSize.x, qrResultSize.y, (error) => Debug.LogError($"Encoding failed! {error}"));
         qrResultRaw.texture = qrResultTexture;
         onUploadSuccess?.Invoke();
     }

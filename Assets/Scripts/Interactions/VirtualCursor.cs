@@ -34,7 +34,7 @@ public class VirtualCursor : MonoBehaviour, InteractionListenerInterface
         EventSystem.current.RaycastAll(eventData, results);
         if (results.Count > 0 && currentInteractionCooldown <= 0f)
         {
-            Debug.Log($"{results[0]}");
+            // Debug.Log($"{results[0]}");
             if (results[0].gameObject.TryGetComponent<ButtonInteraction>(out var vButton))
             {
                 Debug.Log("Button interact!");

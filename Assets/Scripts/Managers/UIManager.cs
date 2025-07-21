@@ -5,25 +5,31 @@ using UnityEngine;
 
 public class UIManager : MonoBehaviour
 {
+    //Outfit UI
+    [SerializeField] private TextMeshProUGUI outfitNameText;
+
     //Photo UI
     [SerializeField] private TextMeshProUGUI countdownText;
     [SerializeField] private TextMeshProUGUI uploadErrorText;
 
-    // Start is called before the first frame update
-    void Start()
+    public void ChangeOutfitName(string name)
     {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
+        outfitNameText.text = name;
     }
 
     public void ActivateCountdown(bool isActive)
     {
         countdownText.gameObject.SetActive(isActive);
+    }
+
+    public void ActivateError(bool isActive)
+    {
+        uploadErrorText.gameObject.SetActive(isActive);
+    }
+
+    public void SetErrorLog(string log)
+    {
+        uploadErrorText.text = log;
     }
 
     public void DisplayTimer(string timer)
