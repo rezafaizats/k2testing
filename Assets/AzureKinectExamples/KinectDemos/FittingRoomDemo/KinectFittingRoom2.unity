@@ -488,6 +488,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: clothes03 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 32ff1f7be98044df4bb394cf086d5575, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -638,6 +642,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: clothes03
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 32ff1f7be98044df4bb394cf086d5575, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -745,6 +753,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 226417119}
+  - component: {fileID: 226417120}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -767,6 +776,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &226417120
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 226417118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bfca5da6d6bef84daa88005ef30bdb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  kinectManager: {fileID: 0}
+  onUserEmpty:
+    m_PersistentCalls:
+      m_Calls: []
+  userEmptyTimer: 15
 --- !u!1 &241203007
 GameObject:
   m_ObjectHideFlags: 0
@@ -912,6 +938,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: fb25e05c095534a2ca71252e0bb8e755, type: 3}
       propertyPath: m_Name
       value: clothes02
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: fb25e05c095534a2ca71252e0bb8e755, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1522,7 +1552,7 @@ Animator:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 295149471}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: fb25e05c095534a2ca71252e0bb8e755, type: 3}
+  m_Avatar: {fileID: 9000000, guid: d3852d7d6e8704702beea3ea3714a986, type: 3}
   m_Controller: {fileID: 0}
   m_CullingMode: 1
   m_UpdateMode: 0
@@ -3618,6 +3648,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: clothes04
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 0bfcf9766434a4ecebdbc9bc4f159463, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4601,6 +4635,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: clothes02 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: fb25e05c095534a2ca71252e0bb8e755, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5264,6 +5302,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 0bfcf9766434a4ecebdbc9bc4f159463, type: 3}
       propertyPath: m_Name
       value: clothes04 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 0bfcf9766434a4ecebdbc9bc4f159463, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6843,6 +6885,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: clothes05 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 792df5870d8ed4c4a863d7c78b4d4da9, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7357,6 +7403,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: clothes01 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d3852d7d6e8704702beea3ea3714a986, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7443,7 +7493,7 @@ Animator:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1728582068}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: fb25e05c095534a2ca71252e0bb8e755, type: 3}
+  m_Avatar: {fileID: 9000000, guid: d3852d7d6e8704702beea3ea3714a986, type: 3}
   m_Controller: {fileID: 0}
   m_CullingMode: 1
   m_UpdateMode: 0
@@ -8151,6 +8201,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 792df5870d8ed4c4a863d7c78b4d4da9, type: 3}
       propertyPath: m_Name
       value: clothes05
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 792df5870d8ed4c4a863d7c78b4d4da9, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
