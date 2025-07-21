@@ -82,6 +82,7 @@ public class ScreenshotManager : MonoBehaviour
         onUploadStart?.Invoke();
 
         var screenshotResultyByte = File.ReadAllBytes(fileScreenshotResultPath);
+        if (screenshotResultyByte == null) Debug.LogError("No screenshot is grabbed.");
         var dateExpires = DateTime.UtcNow.AddMinutes(30);
         StartCoroutine(PhotoHosting.Upload(OnUploadSuccess, OnUploadFailed, fileScreenshotName, screenshotResultyByte, dateExpires));
     }

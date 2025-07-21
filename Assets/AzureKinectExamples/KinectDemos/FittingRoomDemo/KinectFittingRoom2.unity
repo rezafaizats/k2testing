@@ -6201,10 +6201,10 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 978634818}
         m_TargetAssemblyTypeName: UIElementsUtils, Assembly-CSharp
-        m_MethodName: ActivateCanvasGroup
+        m_MethodName: DeactivateCanvasGroup
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 2077175878}
+          m_ObjectArgument: {fileID: 609268930}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.CanvasGroup, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -6213,10 +6213,10 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 978634818}
         m_TargetAssemblyTypeName: UIElementsUtils, Assembly-CSharp
-        m_MethodName: DeactivateCanvasGroup
+        m_MethodName: ActivateCanvasGroup
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 609268930}
+          m_ObjectArgument: {fileID: 2077175878}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.CanvasGroup, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -6269,10 +6269,10 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 978634818}
         m_TargetAssemblyTypeName: UIElementsUtils, Assembly-CSharp
-        m_MethodName: ActivateCanvasGroup
+        m_MethodName: DeactivateCanvasGroup
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 2077175878}
+          m_ObjectArgument: {fileID: 609268930}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.CanvasGroup, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -6281,10 +6281,10 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 978634818}
         m_TargetAssemblyTypeName: UIElementsUtils, Assembly-CSharp
-        m_MethodName: DeactivateCanvasGroup
+        m_MethodName: ActivateCanvasGroup
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 609268930}
+          m_ObjectArgument: {fileID: 2077175878}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.CanvasGroup, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
