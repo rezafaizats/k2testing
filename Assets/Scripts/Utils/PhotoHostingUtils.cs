@@ -19,6 +19,7 @@ public static class PhotoHosting
         // form.AddField("maxDownloads", maxDownloads);
         // form.AddField("autoDelete", autoDelete.ToString());
 
+        Debug.Log($"Trying to upload {form}");
         using(var unityWebRequest = UnityWebRequest.Post("https://tmpfiles.org/api/v1/upload", form)) {
             // unityWebRequest.SetRequestHeader("Authorization", "Token 555myToken555");
 
