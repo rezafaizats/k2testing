@@ -853,6 +853,8 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   userEmptyTimer: 15
+  isUserEmpty: 1
+  currentUserEmptyTimer: 15
 --- !u!1 &241203007
 GameObject:
   m_ObjectHideFlags: 0
@@ -3976,7 +3978,7 @@ MonoBehaviour:
   applyMuscleLimits: 0
   keepLastPose: 0
   horizontalOffset: 0.01
-  verticalOffset: -0.06
+  verticalOffset: -0.04
   forwardOffset: 0
   useUnscaledTime: 0
   boneColliderRadius: 0
@@ -5928,7 +5930,7 @@ MonoBehaviour:
   applyMuscleLimits: 0
   keepLastPose: 0
   horizontalOffset: 0.01
-  verticalOffset: -0.06
+  verticalOffset: -0.04
   forwardOffset: 0
   useUnscaledTime: 0
   boneColliderRadius: 0
@@ -7512,7 +7514,7 @@ MonoBehaviour:
   applyMuscleLimits: 0
   keepLastPose: 0
   horizontalOffset: 0.01
-  verticalOffset: -0.05
+  verticalOffset: -0.03
   forwardOffset: 0
   useUnscaledTime: 0
   boneColliderRadius: 0
@@ -8762,7 +8764,7 @@ MonoBehaviour:
   applyMuscleLimits: 0
   keepLastPose: 0
   horizontalOffset: 0.01
-  verticalOffset: -0.05
+  verticalOffset: -0.03
   forwardOffset: 0
   useUnscaledTime: 0
   boneColliderRadius: 0
