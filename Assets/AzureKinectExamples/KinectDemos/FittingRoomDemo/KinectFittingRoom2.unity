@@ -2379,7 +2379,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionManager: {fileID: 1272239340}
-  interactionCooldown: 0.5
+  interactionCooldown: 1.5
   currentInteractionCooldown: 0
 --- !u!1 &601398841
 GameObject:

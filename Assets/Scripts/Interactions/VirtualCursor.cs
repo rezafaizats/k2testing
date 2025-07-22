@@ -33,10 +33,10 @@ public class VirtualCursor : MonoBehaviour, InteractionListenerInterface
         // Perform the raycast
         List<RaycastResult> results = new List<RaycastResult>();
         EventSystem.current.RaycastAll(eventData, results);
-        if (results.Count > 0 && currentInteractionCooldown <= 0f)
+        if (results.Count > 0)
         {
             // Debug.Log($"{results[0]}");
-            if (results[0].gameObject == currentButtonInteraction.gameObject)
+            if (currentButtonInteraction != null && results[0].gameObject == currentButtonInteraction.gameObject)
             {
                 if (currentInteractionCooldown < interactionCooldown) {
                     currentInteractionCooldown += Time.deltaTime;
