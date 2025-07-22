@@ -11,8 +11,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private UnityEvent onUserEmpty;
     [SerializeField] private float userEmptyTimer = 15f;
 
-    private bool isUserEmpty = true;
-    private float currentUserEmptyTimer = 15f;
+    [SerializeField] private bool isUserEmpty = true;
+    [SerializeField] private float currentUserEmptyTimer = 15f;
 
     // Start is called before the first frame update
     void Start()
@@ -25,11 +25,22 @@ public class GameManager : MonoBehaviour
     {
         if (kinectManager == null) return;
 
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            currentUserEmptyTimer -= Time.deltaTime;
+            if (currentUserEmptyTimer <= 0f)
+            {
+                onUserEmpty?.Invoke();
+                isUserEmpty = true;
+                currentUserEmptyTimer = userEmptyTimer;
+            }
+        }
+
+        Debug.Log($"Total user tracked {kinectManager.GetUsersCount()}");
+
         if (kinectManager.GetUsersCount() > 0) isUserEmpty = false;
 
-        if (!isUserEmpty) return;
-
-        if (kinectManager.GetUsersCount() == 0) {
+        if (kinectManager.GetUsersCount() == 0 && !isUserEmpty) {
             currentUserEmptyTimer -= Time.deltaTime;
             if (currentUserEmptyTimer <= 0f)
             {
