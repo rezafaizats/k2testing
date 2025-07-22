@@ -39,7 +39,10 @@ public class VirtualCursor : MonoBehaviour, InteractionListenerInterface
             // Debug.Log($"{results[0]}");
             if (currentButtonInteraction != null && results[0].gameObject == currentButtonInteraction.gameObject)
             {
-                if (currentInteractionCooldown < interactionCooldown) {
+                if (!currentButtonInteraction.IsInteractable()) return;
+                
+                if (currentInteractionCooldown < interactionCooldown)
+                {
                     currentInteractionCooldown += Time.deltaTime;
                     loadingBar.fillAmount = currentInteractionCooldown / interactionCooldown;
                     return;

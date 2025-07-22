@@ -3,13 +3,15 @@ using System.Collections.Generic;
 using com.rfilkov.components;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 public class ButtonInteraction : MonoBehaviour
 {
-    public UnityEvent OnButtonVirtualClick;
+    [SerializeField] private UnityEvent OnButtonVirtualClick;
+    [SerializeField] private Button buttonUI;
 
     private Vector3 screenNormalPos = Vector3.zero;
-	private InteractionManager.HandEventType lastHandEvent = InteractionManager.HandEventType.None;
+    private InteractionManager.HandEventType lastHandEvent = InteractionManager.HandEventType.None;
 
     // Start is called before the first frame update
     void Start()
@@ -28,5 +30,7 @@ public class ButtonInteraction : MonoBehaviour
         Debug.Log($"{gameObject.name} is invoked");
         OnButtonVirtualClick?.Invoke();
     }
+
+    public bool IsInteractable() => buttonUI.interactable;
 
 }
