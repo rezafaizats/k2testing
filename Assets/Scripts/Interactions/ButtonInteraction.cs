@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
+[RequireComponent(typeof(Button))]
 public class ButtonInteraction : MonoBehaviour
 {
     [SerializeField] private UnityEvent OnButtonVirtualClick;
@@ -16,7 +17,7 @@ public class ButtonInteraction : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        buttonUI = GetComponent<Button>();
     }
 
     // Update is called once per frame

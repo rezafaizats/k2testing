@@ -63,6 +63,7 @@ public class UIManager : MonoBehaviour
 
     public void StartQrTimer()
     {
+        currentQRTimer = qrTimerDuration;
         isQRTimerStarted = true;
     }
 }
