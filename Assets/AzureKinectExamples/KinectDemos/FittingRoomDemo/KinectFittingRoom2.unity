@@ -38,6 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
+  m_IndirectSpecularColor: {r: 0.18028301, g: 0.22571309, b: 0.30692127, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &4
 LightmapSettings:
@@ -564,8 +565,8 @@ MonoBehaviour:
   groundedFeet: 0
   applyMuscleLimits: 0
   keepLastPose: 0
-  horizontalOffset: 0
-  verticalOffset: 0
+  horizontalOffset: 0.015
+  verticalOffset: -0.02
   forwardOffset: 0
   useUnscaledTime: 0
   boneColliderRadius: 0
@@ -739,8 +740,8 @@ MonoBehaviour:
   groundedFeet: 0
   applyMuscleLimits: 0
   keepLastPose: 0
-  horizontalOffset: 0
-  verticalOffset: 0
+  horizontalOffset: 0.015
+  verticalOffset: -0.02
   forwardOffset: 0
   useUnscaledTime: 0
   boneColliderRadius: 0
@@ -1012,8 +1013,8 @@ MonoBehaviour:
   groundedFeet: 0
   applyMuscleLimits: 0
   keepLastPose: 0
-  horizontalOffset: 0
-  verticalOffset: 0
+  horizontalOffset: 0.015
+  verticalOffset: -0.02
   forwardOffset: 0
   useUnscaledTime: 0
   boneColliderRadius: 0
@@ -2065,8 +2066,8 @@ MonoBehaviour:
   groundedFeet: 0
   applyMuscleLimits: 0
   keepLastPose: 0
-  horizontalOffset: 0
-  verticalOffset: 0
+  horizontalOffset: 0.015
+  verticalOffset: -0.001
   forwardOffset: 0
   useUnscaledTime: 0
   boneColliderRadius: 0
@@ -3721,8 +3722,8 @@ MonoBehaviour:
   groundedFeet: 0
   applyMuscleLimits: 0
   keepLastPose: 0
-  horizontalOffset: 0
-  verticalOffset: 0
+  horizontalOffset: 0.015
+  verticalOffset: -0.001
   forwardOffset: 0
   useUnscaledTime: 0
   boneColliderRadius: 0
@@ -4684,8 +4685,8 @@ MonoBehaviour:
   groundedFeet: 0
   applyMuscleLimits: 0
   keepLastPose: 0
-  horizontalOffset: 0
-  verticalOffset: 0
+  horizontalOffset: 0.015
+  verticalOffset: -0.02
   forwardOffset: 0
   useUnscaledTime: 0
   boneColliderRadius: 0
@@ -5355,8 +5356,8 @@ MonoBehaviour:
   groundedFeet: 0
   applyMuscleLimits: 0
   keepLastPose: 0
-  horizontalOffset: 0
-  verticalOffset: 0
+  horizontalOffset: 0.015
+  verticalOffset: -0.001
   forwardOffset: 0
   useUnscaledTime: 0
   boneColliderRadius: 0
@@ -6754,8 +6755,8 @@ MonoBehaviour:
   groundedFeet: 0
   applyMuscleLimits: 0
   keepLastPose: 0
-  horizontalOffset: 0
-  verticalOffset: 0
+  horizontalOffset: 0.015
+  verticalOffset: -0.001
   forwardOffset: 0
   useUnscaledTime: 0
   boneColliderRadius: 0
@@ -7067,8 +7068,8 @@ MonoBehaviour:
   groundedFeet: 0
   applyMuscleLimits: 0
   keepLastPose: 0
-  horizontalOffset: 0
-  verticalOffset: 0
+  horizontalOffset: 0.015
+  verticalOffset: -0.001
   forwardOffset: 0
   useUnscaledTime: 0
   boneColliderRadius: 0
@@ -8251,8 +8252,8 @@ MonoBehaviour:
   groundedFeet: 0
   applyMuscleLimits: 0
   keepLastPose: 0
-  horizontalOffset: 0
-  verticalOffset: 0
+  horizontalOffset: 0.015
+  verticalOffset: -0.001
   forwardOffset: 0
   useUnscaledTime: 0
   boneColliderRadius: 0
