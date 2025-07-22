@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/AzureKinectExamples/KinectDemos/FittingRoomDemo/KinectFittingRoom2.unity
+    guid: 94dc16fe4a5185b4396255c4df14f3ff
   m_configObjects: {}

@@ -9,6 +9,7 @@ public class VirtualCursor : MonoBehaviour, InteractionListenerInterface
 {
     public InteractionManager interactionManager;
     public float interactionCooldown = 1f;
+    [SerializeField] Image loadingBar;
 
     [SerializeField] private float currentInteractionCooldown = 0f;
     private Vector3 screenNormalPos = Vector3.zero;
@@ -40,10 +41,12 @@ public class VirtualCursor : MonoBehaviour, InteractionListenerInterface
             {
                 if (currentInteractionCooldown < interactionCooldown) {
                     currentInteractionCooldown += Time.deltaTime;
+                    loadingBar.fillAmount = currentInteractionCooldown / interactionCooldown;
                     return;
                 }
                 currentButtonInteraction.Interact();
                 currentInteractionCooldown = 0f;
+                loadingBar.fillAmount = 0f;
                 currentButtonInteraction = null;
             }
 
