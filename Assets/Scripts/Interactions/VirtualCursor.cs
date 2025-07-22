@@ -37,13 +37,14 @@ public class VirtualCursor : MonoBehaviour, InteractionListenerInterface
             // Debug.Log($"{results[0]}");
             if (results[0].gameObject.TryGetComponent<ButtonInteraction>(out var vButton))
             {
-                Debug.Log("Button interact!");
+                if (currentInteractionCooldown < interactionCooldown) {
+                    currentInteractionCooldown += Time.deltaTime;
+                    return;
+                }
                 vButton.Interact();
-                currentInteractionCooldown = interactionCooldown;
+                currentInteractionCooldown = 0f;
             }
         }
-
-        if (currentInteractionCooldown > 0f) currentInteractionCooldown -= Time.deltaTime; 
     }
     
     public void HandGripDetected(ulong userId, int userIndex, bool isRightHand, bool isHandInteracting, Vector3 handScreenPos)
