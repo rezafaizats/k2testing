@@ -10,8 +10,9 @@ public class VirtualCursor : MonoBehaviour, InteractionListenerInterface
     public InteractionManager interactionManager;
     public float interactionCooldown = 1f;
 
-    private float currentInteractionCooldown = 0f;
+    [SerializeField] private float currentInteractionCooldown = 0f;
     private Vector3 screenNormalPos = Vector3.zero;
+    private ButtonInteraction currentButtonInteraction = null;
 
 
     // Start is called before the first frame update
@@ -35,14 +36,19 @@ public class VirtualCursor : MonoBehaviour, InteractionListenerInterface
         if (results.Count > 0 && currentInteractionCooldown <= 0f)
         {
             // Debug.Log($"{results[0]}");
-            if (results[0].gameObject.TryGetComponent<ButtonInteraction>(out var vButton))
+            if (results[0].gameObject == currentButtonInteraction.gameObject)
             {
                 if (currentInteractionCooldown < interactionCooldown) {
                     currentInteractionCooldown += Time.deltaTime;
                     return;
                 }
-                vButton.Interact();
+                currentButtonInteraction.Interact();
                 currentInteractionCooldown = 0f;
+                currentButtonInteraction = null;
+            }
+
+            if (results[0].gameObject.TryGetComponent<ButtonInteraction>(out var vButton)) {
+                currentButtonInteraction = vButton;
             }
         }
     }

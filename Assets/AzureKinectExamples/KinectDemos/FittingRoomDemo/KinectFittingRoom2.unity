@@ -2379,7 +2379,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionManager: {fileID: 1272239340}
-  interactionCooldown: 2.5
+  interactionCooldown: 0.5
+  currentInteractionCooldown: 0
 --- !u!1 &601398841
 GameObject:
   m_ObjectHideFlags: 0
@@ -5113,7 +5114,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionManager: {fileID: 1272239340}
-  interactionCooldown: 2.5
+  interactionCooldown: 0.5
+  currentInteractionCooldown: 0
 --- !u!114 &1115972658
 MonoBehaviour:
   m_ObjectHideFlags: 0
