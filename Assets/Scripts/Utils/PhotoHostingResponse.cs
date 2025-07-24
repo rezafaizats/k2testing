@@ -6,12 +6,16 @@ using UnityEngine;
 [Serializable]
 public struct PhotoHostingResponse
 {
-    public string status;
-    public Data data;
+    public bool success;
+    public Files[] files;
 }
 
 [Serializable]
-public struct Data
+public struct Files
 {
+    public string hash;
+    public string filename;
     public string url;
+    public int size;
+    public bool dupe;
 }

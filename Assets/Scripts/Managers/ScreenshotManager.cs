@@ -83,8 +83,7 @@ public class ScreenshotManager : MonoBehaviour
 
         var screenshotResultyByte = File.ReadAllBytes(fileScreenshotResultPath);
         if (screenshotResultyByte == null) Debug.LogError("No screenshot is grabbed.");
-        var dateExpires = DateTime.UtcNow.AddMinutes(30);
-        StartCoroutine(PhotoHosting.Upload(OnUploadSuccess, OnUploadFailed, fileScreenshotName, screenshotResultyByte, dateExpires));
+        StartCoroutine(PhotoHosting.Upload(OnUploadSuccess, OnUploadFailed, fileScreenshotName, screenshotResultyByte));
     }
 
 
@@ -100,12 +99,12 @@ public class ScreenshotManager : MonoBehaviour
 
     private void OnUploadSuccess(PhotoHostingResponse response)
     {
-        Debug.Log($"Success callback {response.data.url}");
+        Debug.Log($"Success callback {response.files[0].url}");
 
         var successText = "Foto berhasil diunggah!";
         isUploading = false;
         Vector2Int qrResultSize = new Vector2Int(256, 256);
-        var qrResultTexture = Screenshotutils.EncodeToQR(response.data.url, qrResultSize.x, qrResultSize.y, (error) => Debug.LogError($"Encoding failed! {error}"));
+        var qrResultTexture = Screenshotutils.EncodeToQR(response.files[0].url, qrResultSize.x, qrResultSize.y, (error) => Debug.LogError($"Encoding failed! {error}"));
         qrResultRaw.texture = qrResultTexture;
         onUploadSuccess?.Invoke();
     }
