@@ -19,7 +19,7 @@ public class VirtualCursor : MonoBehaviour, InteractionListenerInterface
     // Start is called before the first frame update
     void Start()
     {
-
+        loadingBar.gameObject.SetActive(true);
     }
 
     // Update is called once per frame
@@ -34,13 +34,19 @@ public class VirtualCursor : MonoBehaviour, InteractionListenerInterface
         // Perform the raycast
         List<RaycastResult> results = new List<RaycastResult>();
         EventSystem.current.RaycastAll(eventData, results);
+
+        // if (results.Count == 0 && loadingBar.fillAmount >= 0f) loadingBar.fillAmount = 0f;
+
         if (results.Count > 0)
         {
             // Debug.Log($"{results[0]}");
+            if (results[0].gameObject.TryGetComponent<ButtonInteraction>(out var vButton))
+                currentButtonInteraction = vButton;
+            
             if (currentButtonInteraction != null && results[0].gameObject == currentButtonInteraction.gameObject)
             {
                 if (!currentButtonInteraction.IsInteractable()) return;
-                
+
                 if (currentInteractionCooldown < interactionCooldown)
                 {
                     currentInteractionCooldown += Time.deltaTime;
@@ -52,10 +58,13 @@ public class VirtualCursor : MonoBehaviour, InteractionListenerInterface
                 loadingBar.fillAmount = 0f;
                 currentButtonInteraction = null;
             }
-
-            if (results[0].gameObject.TryGetComponent<ButtonInteraction>(out var vButton)) {
-                currentButtonInteraction = vButton;
+            else
+            {
+                loadingBar.fillAmount = 0f;
+                currentInteractionCooldown = 0f;
             }
+
+
         }
     }
     
