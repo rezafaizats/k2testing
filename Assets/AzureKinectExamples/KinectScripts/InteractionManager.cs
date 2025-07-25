@@ -129,7 +129,7 @@ namespace com.rfilkov.components
         private Vector3 cursorScreenPos = Vector3.zero;
         private bool dragInProgress = false;
 
-        private Image cursorProgressBar;
+        // private Image cursorProgressBar;
         private float cursorClickProgress = 0f;
 
         // hand states
@@ -424,8 +424,8 @@ namespace com.rfilkov.components
         void Start()
         {
             // get the progress bar reference if any
-            GameObject objProgressBar = guiHandCursor && guiHandCursor.gameObject.transform.childCount > 0 ? guiHandCursor.transform.GetChild(0).gameObject : null;
-            cursorProgressBar = objProgressBar ? objProgressBar.GetComponent<Image>() : null;
+            // GameObject objProgressBar = guiHandCursor && guiHandCursor.gameObject.transform.childCount > 0 ? guiHandCursor.transform.GetChild(0).gameObject : null;
+            // cursorProgressBar = objProgressBar ? objProgressBar.GetComponent<Image>() : null;
 
             interactionInited = true;
 
@@ -1044,10 +1044,10 @@ namespace com.rfilkov.components
                     guiHandCursor.sprite = cursorTexture;
                     guiHandCursor.rectTransform.anchoredPosition = posSprite;
 
-                    if (cursorProgressBar)
-                    {
-                        cursorProgressBar.fillAmount = cursorClickProgress;
-                    }
+                    // if (cursorProgressBar)
+                    // {
+                    //     cursorProgressBar.fillAmount = cursorClickProgress;
+                    // }
                 }
             }
         }
