@@ -27,13 +27,9 @@ public class GameManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            currentUserEmptyTimer -= Time.deltaTime;
-            if (currentUserEmptyTimer <= 0f)
-            {
-                onUserEmpty?.Invoke();
-                isUserEmpty = true;
-                currentUserEmptyTimer = userEmptyTimer;
-            }
+            onUserEmpty?.Invoke();
+            isUserEmpty = true;
+            currentUserEmptyTimer = userEmptyTimer;
         }
 
         Debug.Log($"Total user tracked {kinectManager.GetUsersCount()}");
