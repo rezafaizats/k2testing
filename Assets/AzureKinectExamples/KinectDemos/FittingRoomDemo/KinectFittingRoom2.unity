@@ -7671,11 +7671,11 @@ MonoBehaviour:
     meshOutfit:
     - {fileID: 218549023}
     - {fileID: 204570282}
-  - outfitName: 'Kebaya Kutu Baru dan Selendang Sifon dengan Wastra Tapis Lampung '
+  - outfitName: 'Kebaya Kutubaru dan Selendang Sifon dengan Wastra Tapis Lampung '
     meshOutfit:
     - {fileID: 902345125}
     - {fileID: 1367552248}
-  - outfitName: Kebaya Kutu Baru dan Selendang dengan Wastra Tapis Lampung
+  - outfitName: Kebaya Kutubaru dan Selendang dengan Wastra Tapis Lampung
     meshOutfit:
     - {fileID: 1965901621}
     - {fileID: 1572929042}
