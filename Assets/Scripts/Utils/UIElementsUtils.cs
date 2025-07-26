@@ -7,6 +7,7 @@ public class UIElementsUtils : MonoBehaviour
 {
     public void ActivateCanvasGroup(CanvasGroup canvas)
     {
+        if (canvas.interactable) return;
         DOTween.Init();
         canvas.gameObject.SetActive(true);
         canvas.alpha = 0;
@@ -17,6 +18,7 @@ public class UIElementsUtils : MonoBehaviour
 
     public void DeactivateCanvasGroup(CanvasGroup canvas)
     {
+        if (!canvas.interactable) return;
         DOTween.Init();
         canvas.alpha = 1;
         canvas.interactable = false;
