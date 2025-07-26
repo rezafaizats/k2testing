@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private float userEmptyTimer = 15f;
 
     [SerializeField] private bool isUserEmpty = true;
+    [SerializeField] private bool isIdleRevertBack = true;
     [SerializeField] private float currentUserEmptyTimer = 15f;
 
     // Start is called before the first frame update
@@ -36,7 +37,8 @@ public class GameManager : MonoBehaviour
 
         if (kinectManager.GetUsersCount() > 0) isUserEmpty = false;
 
-        if (kinectManager.GetUsersCount() == 0 && !isUserEmpty) {
+        if (kinectManager.GetUsersCount() == 0 && !isUserEmpty && isIdleRevertBack)
+        {
             currentUserEmptyTimer -= Time.deltaTime;
             if (currentUserEmptyTimer <= 0f)
             {
@@ -46,5 +48,7 @@ public class GameManager : MonoBehaviour
             }
         }
     }
+
+    public void SetIdleReset(bool status) => isIdleRevertBack = status;
 
 }
