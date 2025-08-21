@@ -8,22 +8,22 @@ public class UIElementsUtils : MonoBehaviour
     public void ActivateCanvasGroup(CanvasGroup canvas)
     {
         if (canvas.interactable) return;
+        canvas.interactable = true;
+        canvas.blocksRaycasts = true;
         DOTween.Init();
         canvas.gameObject.SetActive(true);
         canvas.alpha = 0;
-        canvas.interactable = true;
-        canvas.blocksRaycasts = true;
         canvas.DOFade(1f, 0.65f);
     }
 
     public void DeactivateCanvasGroup(CanvasGroup canvas)
     {
         if (!canvas.interactable) return;
-        DOTween.Init();
-        canvas.alpha = 1;
         canvas.interactable = false;
         canvas.blocksRaycasts = false;
-        canvas.DOFade(0f, 0.65f);
+        DOTween.Init();
+        canvas.alpha = 1;
+        canvas.DOFade(0f, 0.65f).OnComplete( () => canvas.gameObject.SetActive(true));
     }
 
 }

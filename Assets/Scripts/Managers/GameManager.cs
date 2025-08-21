@@ -33,11 +33,12 @@ public class GameManager : MonoBehaviour
             currentUserEmptyTimer = userEmptyTimer;
         }
 
-        Debug.Log($"Total user tracked {kinectManager.GetUsersCount()}");
+        // Debug.Log($"Total user tracked {kinectManager.GetUsersCount()}");
 
         if (kinectManager.GetUsersCount() > 0) isUserEmpty = false;
-
-        if (kinectManager.GetUsersCount() == 0 && !isUserEmpty && isIdleRevertBack)
+        else isUserEmpty = true;
+        
+        if (kinectManager.GetUsersCount() == 0 && !isUserEmpty)
         {
             currentUserEmptyTimer -= Time.deltaTime;
             if (currentUserEmptyTimer <= 0f)
