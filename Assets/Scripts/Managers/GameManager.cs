@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using com.rfilkov.kinect;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -51,5 +52,9 @@ public class GameManager : MonoBehaviour
     }
 
     public void SetIdleReset(bool status) => isIdleRevertBack = status;
+
+    public void ResetScene() {
+        SceneManager.LoadScene(0);
+    }
 
 }
